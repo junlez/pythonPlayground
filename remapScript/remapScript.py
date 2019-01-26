@@ -1,5 +1,6 @@
 print("rawrr")
 
+'''
 fingerTest = [
 61,
 45,
@@ -68,19 +69,39 @@ fingerTest = [
 ]
 
 
-mappedOutput = []
+
+'''
+
+
+#mappedOutput = []
+
+fileIn = open("fingerTest_mapping.txt", "rt")
+
+fingerTest = []
+
+for line in fileIn:
+	fingerTest.append(int(line))
+
+'''
+for item in fingerTest:
+	print(item)#print(type(item))
+'''
+
+fileOut = open("converted_mapping.txt", "wt")
+
 index = 0
 
 for i in range(len(fingerTest)):
 	for j in fingerTest:
 		if i == j:
-			mappedOutput.append(index)
+			fileOut.write(str(index) + "\n")
 		index = index + 1
 	index = 0
 
+'''
 for i in mappedOutput:
 	print(i)
-
+'''
 
 
 
